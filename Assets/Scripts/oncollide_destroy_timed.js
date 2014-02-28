@@ -13,5 +13,9 @@ function Awake()
 function Death()
 {
 	  yield WaitForSeconds (10);
-  Destroy(gameObject);
+  if (gameObject != null)
+    	 {
+     	Destroy(gameObject);
+ 	 
+    	 }
 }
