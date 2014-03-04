@@ -1,6 +1,7 @@
 //Spacebar = Reload Scene
 var projectile : Rigidbody;
 var projectile2 : Rigidbody;
+var projectile3 : Rigidbody;
 var table : GameObject;
 var water : GameObject;
 var toggleTable = 0;
@@ -58,7 +59,16 @@ function Update () {
 			clone2.velocity = transform.TransformDirection (Vector3.forward * 13);
 				}
 		
-
+		if(Input.GetButtonDown("Jump") && Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2") && Input.GetButtonDown("Fire1") ||  Input.GetKeyDown("up"))
+				{
+					var clone3 : Rigidbody;
+			clone3 = Instantiate(projectile3, transform.position, transform.rotation);
+			
+			// Give the cloned object an initial velocity along the current 
+			// object's Z axis
+			clone3.velocity = transform.TransformDirection (Vector3.forward * 20);
+				}
+		
 
 	
 	}
